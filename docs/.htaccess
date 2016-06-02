@@ -1,0 +1,14 @@
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^tweetbomb/([a-zA-Z0-9]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([0-9]+),([0-9]+).html$ 							modules/twitterbomb/index.php?op=$1&fct=$2&start=$3&limit=$4&cid=$5&catid=$6
+RewriteRule ^tweetbomb/rss,([0-9]+),([0-9]+),([a-zA-Z0-9]+).rss$ 														modules/twitterbomb/backend.php?cid=$1&catid=$2&cacheid=$3
+RewriteRule ^tweetbomb/go.html$ 																						modules/twitterbomb/go.php
+RewriteRule ^tweetbomb/index.php$ 																						modules/twitterbomb/index.php
+
+
+
+
+

@@ -1,0 +1,55 @@
+<h1><{$smarty.const._AM_TWEETBOMB_LOG_H1}></h1>
+<p><{$smarty.const._AM_TWEETBOMB_LOG_P}></p>
+<div style="clear:both; height:45px;">
+	<div style="float:right; height:45px;"><{$pagenav}></div>
+</div>
+
+<table>
+	<tr class="head">
+		<th><{$provider_th}></th>
+		<th><{$date_th}></th>
+		<th><{$alias_th}></th>
+		<{if $xoConfig.tags}>
+		<th><{$tags_th}></th>
+		<{/if}>
+		<th><{$tweet_th}></th>
+		<th><{$cid_th}></th>
+		<th><{$catid_th}></th>
+		<th><{$hits_th}></th>
+		<th><{$rank_th}></th>
+		<th><{$active_th}></th>
+	</tr>
+	<tr class="filter">
+		<th><{$filter_provider_th}></th>
+		<th><{$filter_date_th}></th>
+		<th><{$filter_alias_th}></th>
+		<{if $xoConfig.tags}>
+		<th><{$filter_tags_th}></th>
+		<{/if}>
+		<th><{$filter_tweet_th}></th>
+		<th><{$filter_cid_th}></th>
+		<th><{$filter_catid_th}></th>
+		<th><{$filter_hits_th}></th>
+		<th><{$filter_rank_th}></th>
+		<th><{$filter_active_th}></th>
+	</tr>
+	<{foreach item=item from=$log}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td align='center'><{$item.provider}></td>
+		<td align='center'><{$item.date_datetime}></td>
+		<td align='center'><{$item.alias}></td>
+		<{if $xoConfig.tags}>
+		<td><{include file="db:tag_bar.html" tagbar=$item.tagbar}></td>
+		<{/if}>
+		<td align='center'><a href="<{$item.url}>"><{$item.tweet}></a></td>
+		<td align='center'><{$item.cid_text}></td>
+		<td align='center'><{$item.catid_text}></td>
+		<td align='center'><{$item.hits}></td>
+		<td align='center'><{$item.rank}></td>
+		<td align='center'><{$item.active_datetime}></td>
+	</tr>
+	<{/foreach}>
+	<tr class="foot">
+		<td colspan="<{if $xoConfig.tags}>10<{else}>9<{/if}>">&nbsp;</td>
+	</tr>
+</table>

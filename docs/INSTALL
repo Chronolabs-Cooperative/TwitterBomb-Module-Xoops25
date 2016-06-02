@@ -1,0 +1,63 @@
++-----------------------------------------------------------------------------------+
+|                                                                                   |
+|  TwitterBomb Version 1.18 								                        |
+|                                                                                   |
++--[ Installing Cron ]--------------------------------------------------------------+
+|                                                                                   |
+| You will need to install the following cron within your cronjobs section of your  |
+| Wesite, if you are using a windows server in WAMP then you will need to schedule  |
+| this as a task, remember to change the path to suit your configuration.           |
+|                                                                                   |
+| command to run every minute to once a minute, make sure it is within your         |
+| refresh time. This is the or unix based systems after it is for windows:          |
+|                                                                                   |
+|  /usr/bin/php -q /home/yoursite/public_html/modules/twitterbomb/cron/all.php      |
+|                                                                                   |
+|     -- For this method set the cron type in preferences to Unix Cron Job --       |
+|                                                                                   |
+| Assuming you have your PHP added to your executable path this is the scheduled    |
+| task to run on a windows environment:                                             |
+|                                                                                   |
+|  php.exe -q c:\htdocs\modules\twitterbomb\cron\all.php      		                |
+|                                                                                   |
+| -- For this method set the cron type in preferences to Windows Scheduled Task --  |
+|                                                                                   |
+| Some of the paths in these examples for executables or the cron file may be       |
+| different and you will have to alter them to your needs.	                        |
+|                                                                                   |
++--[ Preloader Alternative to Installing Cron ]-------------------------------------+
+|                                                                                   |
+|  Replace the header.php file provided in the extras setting and set your cron     |
+|  type in preferences to 'Preloader', alternatively you can include the files in   |
+|  a hack of the files which are in the TwitterBomb Root.                           |
+|                                                                                   |
+|  Line 91 - 94 of header.php in XOOPS 2.5/2.4 should read with this patch:         |
+|                                                                                   |
+|   if ($xoTheme->checkCache()) {                                                   |
+|   	$xoopsPreload->triggerEvent('core.header.cache.end');                       |
+|       exit();                                                                     |
+|   }                                                                               |
+|                                                                                   |
++--[ Include file Alternative to Installing Cron & Preloaders ]---------------------+
+|                                                                                   |
+|  the following lines can be included if your preloaders are not working, but      |
+|  remember to delete the /twitterbomb/preloads folder so there are no conflict     |
+|  when using the include method. Still set your cron type in preferences for this  |
+|  method to 'preloaders'.                                                          |
+|                                                                                   |                                                                                  |
+|  Step 1 - Last line of /include/common.php should read:                           |
+|                                                                                   |
+|  include($GLOBALS['xoops']->path('/modules/twitterbomb/post.common.end.php'));    |
+|                                                                                   |
+|  Step 2 - Line 91 to 94 of /header.php should read:                               |
+|                                                                                   |
+|  if ($xoTheme->checkCache()) {                                                    |
+|     include($GLOBALS['xoops']->path('/modules/twitterbomb/post.cache.end.php'));  |
+|     exit();                                                                       |
+|  }                                                                                |
+|                                                                                   |
+|  Step 3 - Last line of /footer.php should read:                                   |
+|                                                                                   |
+|  include($GLOBALS['xoops']->path('/modules/twitterbomb/post.footer.end.php'));    |
+|                                                                                   |
++-----------------------------------------------------------------------------------+

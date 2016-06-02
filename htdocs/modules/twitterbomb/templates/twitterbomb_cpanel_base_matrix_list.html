@@ -1,0 +1,76 @@
+<h1><{$smarty.const._AM_TWEETBOMB_BASEMATRIX_H1}></h1>
+<p><{$smarty.const._AM_TWEETBOMB_BASEMATRIX_P}></p>
+<div style="clear:both; height:45px;">
+	<div style="float:right; height:45px;"><{$pagenav}></div>
+</div>
+
+<form action="<{$php_self}>" method='post'>
+<table>
+	<tr class="head">
+		<th><{$baseid_th}></th>
+		<th><{$cid_th}></th>
+		<th><{$catid_th}></th>
+		<th><{$base1_th}></th>
+		<th><{$base2_th}></th>
+		<th><{$base3_th}></th>
+		<th><{$base4_th}></th>
+		<th><{$base5_th}></th>
+		<th><{$base6_th}></th>
+		<th><{$base7_th}></th>
+		<th><{$uid_th}></th>
+		<th><{$created_th}></th>
+		<th><{$actioned_th}></th>
+		<th><{$updated_th}></th>
+		<th><{$smarty.const._AM_TWEETBOMB_TH_ACTIONS}></th>
+	</tr>
+	<tr class="filter">
+		<th><{$filter_baseid_th}></th>
+		<th><{$filter_cid_th}></th>
+		<th><{$filter_catid_th}></th>
+		<th><{$filter_base1_th}></th>
+		<th><{$filter_base2_th}></th>
+		<th><{$filter_base3_th}></th>
+		<th><{$filter_base4_th}></th>
+		<th><{$filter_base5_th}></th>
+		<th><{$filter_base6_th}></th>
+		<th><{$filter_base7_th}></th>
+		<th><{$filter_uid_th}></th>
+		<th><{$filter_created_th}></th>
+		<th><{$filter_actioned_th}></th>
+		<th><{$filter_updated_th}></th>
+		<th>&nbsp;</th>
+	</tr>
+	<{foreach item=item from=$base_matrix}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td align='center'><{$item.baseid}><{$item.form.id}></td>
+		<td align='center'><{$item.form.cid}></td>
+		<td align='center'><{$item.form.catid}></td>
+		<td align='center'><{$item.form.base1}></td>
+		<td align='center'><{$item.form.base2}></td>
+		<td align='center'><{$item.form.base3}></td>
+		<td align='center'><{$item.form.base4}></td>
+		<td align='center'><{$item.form.base5}></td>		
+		<td align='center'><{$item.form.base6}></td>
+		<td align='center'><{$item.form.base7}></td>
+		<td align='center'><{$item.form.uid}></td>
+		<td align='right'><{$item.form.created}></td>
+		<td align='right'><{$item.form.actioned}></td>
+		<td align='right'><{$item.form.updated}></td>
+		<td align='right'><a href="<{$php_self}>?op=base_matrix&fct=edit&id=<{$item.baseid}>&start=<{$start}>&limit=<{$limit}>&order=<{$order}>&sort=<{$sort}>&filter=<{$filter}>"><{$smarty.const._EDIT}></a>&nbsp;|&nbsp;<a href="<{$php_self}>?op=base_matrix&fct=delete&id=<{$item.baseid}>&start=<{$start}>&limit=<{$limit}>&order=<{$order}>&sort=<{$sort}>&filter=<{$filter}>"><{$smarty.const._DELETE}></a></td>
+	</tr>
+	<{/foreach}>
+	<tr class="foot">
+		<td colspan="15"><input type='submit' name='submit' value='<{$smarty.const._SUBMIT}>'/></td>
+	</tr>
+</table>
+<input type='hidden' name='op' value='base_matrix'/>
+<input type='hidden' name='fct' value='savelist'/>
+<input type='hidden' name='start' value='<{$start}>'/>
+<input type='hidden' name='limit' value='<{$limit}>'/>
+<input type='hidden' name='order' value='<{$order}>'/>
+<input type='hidden' name='sort' value='<{$sort}>'/>
+<input type='hidden' name='filter' value='<{$filter}>'/>
+</form>
+<h1><{$smarty.const._AM_TWEETBOMB_NEW_BASEMATRIX_H1}></h1>
+<p><{$smarty.const._AM_TWEETBOMB_NEW_BASEMATRIX_P}></p>
+<{$form}>

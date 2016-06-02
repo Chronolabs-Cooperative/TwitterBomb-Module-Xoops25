@@ -1,0 +1,64 @@
+<h1><{$smarty.const._AM_TWEETBOMB_MENTIONS_H1}></h1>
+<p><{$smarty.const._AM_TWEETBOMB_MENTIONS_P}></p>
+<div style="clear:both; height:45px;">
+	<div style="float:right; height:45px;"><{$pagenav}></div>
+</div>
+
+<form action="<{$php_self}>" method='post'>
+<table>
+	<tr class="head">
+		<th><{$mid_th}></th>
+		<th><{$cid_th}></th>
+		<th><{$catid_th}></th>
+		<th><{$user_th}></th>
+		<th><{$rpids_th}></th>
+		<th><{$keywords_th}></th>
+		<th><{$mentions_th}></th>
+		<th><{$uid_th}></th>
+		<th><{$created_th}></th>
+		<th><{$updated_th}></th>
+		<th><{$smarty.const._AM_TWEETBOMB_TH_ACTIONS}></th>
+	</tr>
+	<tr class="filter">
+		<th>&nbsp;</th>
+		<th><{$filter_cid_th}></th>
+		<th><{$filter_catid_th}></th>
+		<th><{$filter_user_th}></th>
+		<th><{$filter_rpids_th}></th>
+		<th><{$filter_keywords_th}></th>
+		<th><{$filter_mentions_th}></th>
+		<th><{$filter_uid_th}></th>		
+		<th><{$filter_created_th}></th>
+		<th><{$filter_updated_th}></th>
+		<th>&nbsp;</th>
+	</tr>
+	<{foreach item=item from=$mentions}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td align='center'><{$item.mid}><{$item.form.id}></td>
+		<td align='center'><{$item.form.cid}></td>
+		<td align='center'><{$item.form.catid}></td>
+		<td align='center'><{$item.form.user}></td>
+		<td align='center'><{$item.form.rpids}></td>
+		<td align='center'><{$item.form.keywords}></td>
+		<td align='center'><{$item.form.mentions}></td>
+		<td align='center'><{$item.form.uid}></td>		
+		<td align='center'><{$item.form.created}></td>
+		<td align='center'><{$item.form.updated}></td>
+		<td align='right'><a href="<{$php_self}>?op=mentions&fct=edit&id=<{$item.mid}>&start=<{$start}>&limit=<{$limit}>&order=<{$order}>&sort=<{$sort}>&filter=<{$filter}>"><{$smarty.const._EDIT}></a>&nbsp;|&nbsp;<a href="<{$php_self}>?op=mentions&fct=delete&id=<{$item.mid}>&start=<{$start}>&limit=<{$limit}>&order=<{$order}>&sort=<{$sort}>&filter=<{$filter}>"><{$smarty.const._DELETE}></a></td>
+	</tr>
+	<{/foreach}>
+	<tr class="foot">
+		<td colspan="11"><input type='submit' name='submit' value='<{$smarty.const._SUBMIT}>'/></td>
+	</tr>
+</table>
+<input type='hidden' name='op' value='mentions'/>
+<input type='hidden' name='fct' value='savelist'/>
+<input type='hidden' name='start' value='<{$start}>'/>
+<input type='hidden' name='limit' value='<{$limit}>'/>
+<input type='hidden' name='order' value='<{$order}>'/>
+<input type='hidden' name='sort' value='<{$sort}>'/>
+<input type='hidden' name='filter' value='<{$filter}>'/>
+</form>
+<h1><{$smarty.const._AM_TWEETBOMB_NEW_MENTIONS_H1}></h1>
+<p><{$smarty.const._AM_TWEETBOMB_NEW_MENTIONS_P}></p>
+<{$form}>

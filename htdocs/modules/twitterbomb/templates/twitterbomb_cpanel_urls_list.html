@@ -1,0 +1,58 @@
+<h1><{$smarty.const._AM_TWEETBOMB_URLS_H1}></h1>
+<p><{$smarty.const._AM_TWEETBOMB_URLS_P}></p>
+<div style="clear:both; height:45px;">
+	<div style="float:right; height:45px;"><{$pagenav}></div>
+</div>
+
+<form action="<{$php_self}>" method='post'>
+<table>
+	<tr class="head">
+		<th><{$urlid_th}></th>
+		<th><{$cid_th}></th>
+		<th><{$catid_th}></th>
+		<th><{$surl_th}></th>
+		<th><{$name_th}></th>
+		<th><{$uid_th}></th>
+		<th><{$created_th}></th>
+		<th><{$updated_th}></th>
+		<th><{$smarty.const._AM_TWEETBOMB_TH_ACTIONS}></th>
+	</tr>
+	<tr class="filter">
+		<th><{$filter_urlid_th}></th>
+		<th><{$filter_cid_th}></th>
+		<th><{$filter_catid_th}></th>
+		<th><{$filter_surl_th}></th>
+		<th><{$filter_name_th}></th>
+		<th><{$filter_uid_th}></th>
+		<th><{$filter_created_th}></th>
+		<th><{$filter_updated_th}></th>
+		<th>&nbsp;</th>
+	</tr>
+	<{foreach item=item from=$urls}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td align='center'><{$item.urlid}><{$item.form.id}></td>
+		<td align='center'><{$item.form.cid}></td>
+		<td align='center'><{$item.form.catid}></td>
+		<td align='center'><{$item.form.surl}></td>
+		<td align='center'><{$item.form.name}></td>
+		<td align='center'><{$item.form.uid}></td>
+		<td align='right'><{$item.form.created}></td>
+		<td align='right'><{$item.form.updated}></td>
+		<td align='right'><a href="<{$php_self}>?op=urls&fct=edit&id=<{$item.urlid}>&start=<{$start}>&limit=<{$limit}>&order=<{$order}>&sort=<{$sort}>&filter=<{$filter}>"><{$smarty.const._EDIT}></a>&nbsp;|&nbsp;<a href="<{$php_self}>?op=urls&fct=delete&id=<{$item.urlid}>&start=<{$start}>&limit=<{$limit}>&order=<{$order}>&sort=<{$sort}>&filter=<{$filter}>"><{$smarty.const._DELETE}></a></td>
+	</tr>
+	<{/foreach}>
+	<tr class="foot">
+		<td colspan="9"><input type='submit' name='submit' value='<{$smarty.const._SUBMIT}>'/></td>
+	</tr>
+</table>
+<input type='hidden' name='op' value='urls'/>
+<input type='hidden' name='fct' value='savelist'/>
+<input type='hidden' name='start' value='<{$start}>'/>
+<input type='hidden' name='limit' value='<{$limit}>'/>
+<input type='hidden' name='order' value='<{$order}>'/>
+<input type='hidden' name='sort' value='<{$sort}>'/>
+<input type='hidden' name='filter' value='<{$filter}>'/>
+</form>
+<h1><{$smarty.const._AM_TWEETBOMB_NEW_URLS_H1}></h1>
+<p><{$smarty.const._AM_TWEETBOMB_NEW_URLS_P}></p>
+<{$form}>

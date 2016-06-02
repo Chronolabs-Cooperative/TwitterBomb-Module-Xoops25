@@ -1,0 +1,87 @@
+========================================
+ 2012/04/25 17:23:00 Version 1.32 STABLE
+========================================
+ - Changed /admin/index.php - added section for pictures crawl and fixed retweet list saving (Wishcraft)
+ - Changed /include/update.php - changed fields and upgrade options (Wishcraft)
+ - Changed /include/functions.php - added four routines to do with picture crawling (Wishcraft)
+ - Changed /language/english/admin.php - Missing Language defines as well as picture defines (Wishcraft)
+ - Changed /language/english/modinfo.php - Missing Language defines as well as picture defines (Wishcraft)
+ - Changed /cron/tweet.php - Pictures Crawling routines added (Wishcraft)
+ - Changed /xoops_version.php - Pictures Crawling routines added and options (Wishcraft)
+ - Added /class/pictures.php - added pictures handler class (Wishcraft)
+ 
+========================================
+ 2012/04/25 17:23:00 Version 1.31 STABLE
+========================================
+ - Changed /admin/index.php - $_REQUEST['id'] imported as $id for subroutine (Wishcraft)
+ - Changed /class/base_matrix.php - Required fields Marked for Database insertion (Wishcraft)
+ - Changed /class/keywords.php - Required fields Marked for Database insertion (Wishcraft)
+ - Changed /class/mentions.php - Required fields Marked for Database insertion (Wishcraft)
+ - Changed /class/replies.php - Required fields Marked for Database insertion (Wishcraft)
+ - Changed /class/retweet.php - Required fields Marked for Database insertion (Wishcraft)
+ - Changed /class/scheduler.php - Required fields Marked for Database insertion (Wishcraft)
+ 
+========================================
+ 2012/04/03 20:08:00 Version 1.30 RC
+========================================
+ - Changed /language/english/modinfo.php - Admin Menus changed (Wishcraft)
+ - Changed /language/english/admin.php - Missing Langauge Constants Added and Duplicates Removed (Wishcraft)
+ - Changed /admin/menu.php - Missing menus added (Wishcraft)
+ - Changed /admin/index.php - Missing variable added to mention 'uid' header titles (Wishcraft)
+ - Changed /include/function.php - Warning & Notices, handler object name (mention), header filter for RCID addressed (Wishcraft)
+ - Changed /include/upgrade.php - Missing Field Variables Addressed (Wishcraft)
+ - Changed /cron/tweet.php - Minor fixes, error message on missing root oauth  (Wishcraft)
+ - Changed /cron/gather.php - Minor fixes, error message on missing root oauth  (Wishcraft)
+ - Changed /cron/follow.php - Minor fixes, error message on missing root oauth (Wishcraft)
+
+========================================
+ 2012/03/24 2:00:00 Version 1.29 BETA2
+========================================
+ - Changed /sql/mysql.php - prefix of indicies fixed [mamba] (Wishcraft)
+ - Changed /xoops_version.php - Anonymous Variable Checked to Exist [mamba] (Wishcraft)
+ 
+========================================
+ 2012/03/24 2:00:00 Version 1.28 BETA
+========================================
+ - Changed /admin/index.php - Mentions and Replies added to Admin  (Wishcraft)
+ - Changed /include/forms.twitterbomb.php - Function tweetbomb_replies_get_form() Added  (Wishcraft)
+ - Changed /include/forms.twitterbomb.php - Function tweetbomb_mentions_get_form() Added  (Wishcraft)
+ - Changed /include/forms.twitterbomb.php - Other Minor Form Changes Made Added  (Wishcraft)
+ - Changed /include/upgrade.php - changes for Replies & Mentions & BigInt instead of varchar ID Storage Added (Wishcraft)
+ - Changed /include/formselectmode.php - changes for Replies & Mentions Added (Wishcraft)
+ - Changed /include/formselecttype.php - changes for Replies & Mentions Added (Wishcraft)
+ - Changed /include/formselecttype.php - changes for Replies & Mentions Added (Wishcraft)
+ - Changed /cron/tweet.php - Mention & Replies Routines Added (Wishcraft)
+ - Changed /class/oauth.php - Function oauth::sendReply() Added (Wishcraft)
+ - Changed /class/campaigns.php - changes for Replies & Mentions Added (Wishcraft)
+ - Changed /class/log.php - changes for Replies & Mentions Added (Wishcraft)
+ - Changed /sql/mysql.php - changes for Replies & Mentions Added (Wishcraft)
+ - Changed /language/english/admin.php - changes for Replies & Mentions Added (Wishcraft)
+ - Changed /language/english/modinfo.php - changes for Replies & Mentions Added (Wishcraft)
+ - Added /class/mentions.php - Class Wrapper for Mentions Added (Wishcraft)
+ - Added /class/replies.php - Class Wrapper for Replies Added (Wishcraft)
+ - Added /include/formcheckboxmentions.php - Check Box for Mentions Added (Wishcraft)
+ - Added /include/formcheckboxreplies.php - Check Box for Replies Added (Wishcraft)
+
+========================================
+ 2012/01/09 14:00:00 Version 1.26 STABLE
+========================================
+ - Changed /admin/index.php - Fixed WSOD on Dashboard with $log[0]-getVar to ->getVar  (Wishcraft)
+ - Changed /include/function.php - Fixed twitterbomb_searchtwitter() Line 140 - 155 - Exceptions  (Wishcraft)
+ - Changed /cron/tweet.php - Changed Exceptions and Closure of Routine as well as population of $cids (Wishcraft)
+ 
+========================================
+ 2011/11/09 20:11:00 Version 1.25 STABLE
+========================================
+ - Changed $pathImageAdmin renamed to $GLOBALS['twitterbombImageAdmin']  (Wishcraft)
+ - Changed $pathImageIcon renamed to $GLOBALS['twitterbombImageIcon']  (Wishcraft)
+ - Changed $GLOBALS['xoopsModule'] in module renamed to $GLOBALS['twitterbombModule'] (Wishcraft)
+ - Changed $GLOBALS['xoopsModuleConfig'] in module renamed to $GLOBALS['twitterbombModuleConfig'] (Wishcraft)
+ - Changed XOOPS 2.5.x Admin GUI  (Wishcraft)
+ - Changed XOOPS 2.5.x Admin GUI Language Constants for Statistics language/english/admin.php  (Wishcraft)
+ - Changed Admin Menu Language Constants for Statistics language/english/modinfo.php (GUI)  (Wishcraft)
+ - Added header for index and associate PHP files /header.php (Wishcraft)
+ - Added header for control panel and associate PHP files admin/header.php (Wishcraft)
+ - Changed twitterbomb_searchtwitter() - Fixed Exceptions and added '-' to exclude exception as smart string include/functions.php  (Wishcraft)
+ - Changed twitterbomb_searchtwitter() - Changed Exception Seperator from Pipe '|' to Space ' '  (Wishcraft)
+ - Changed twitterbomb_adminMenu() - Changed to include addNavigation from XOOPS 2.5 Admin GUI  (Wishcraft)

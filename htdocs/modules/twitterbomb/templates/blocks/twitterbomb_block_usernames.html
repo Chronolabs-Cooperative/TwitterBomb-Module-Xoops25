@@ -1,0 +1,19 @@
+<table align="center" width='100%'>
+<{foreach from=$block.data item=node}>
+	<{if $node.col==1}>
+	<tr class='<{cycle value="even,odd'}>'>
+	<{/if}>
+		<td colspan="<{$node.colspan}>">
+			<{if $block.mode.picture}><div><center><{if $block.mode.url}><a href="<{$block.mode.url}><{$node.screenname}>" ><{/if}><img width="<{$block.image.width}>" src="<{$node.picture}>" alt="<{$node.name}> (<{$node.screenname}>)"/><{if $block.mode.url}></a><{/if}></center></div><{/if}>
+			<{if $block.mode.screenname}><div><center><{if $block.mode.url}><a href="<{$block.mode.url}><{$node.screenname}>" ><{/if}><{$node.screenname}><{if $block.mode.url}></a><{/if}></center></div><{/if}>
+			<{if $block.mode.name}><div><center><{if $block.mode.url}><a href="<{$block.mode.url}><{$node.screenname}>" ><{/if}><{$node.name}><{if $block.mode.url}></a><{/if}></center></div><{/if}>
+			<{if $block.mode.description}><div><center><{$node.description}></center></div><{/if}>
+		</td>
+	<{if $node.last==1}>
+	</tr>
+	<{elseif $node.newrow==1}>
+	</tr>
+	<{/if}>
+<{/foreach}>
+</table>
+

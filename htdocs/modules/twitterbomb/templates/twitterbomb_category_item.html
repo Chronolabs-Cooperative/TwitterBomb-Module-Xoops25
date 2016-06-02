@@ -1,0 +1,1 @@
+<td><a href="<{$php_self}>?catid=<{$category.catid}>"><strong><{$category.name}></strong></a>&nbsp;(<{$category.hits}>)&nbsp;<{if $category.subitems}><br/><{foreach item=subitem from=$category.subcategories}><a href="<{$php_self}>?catid=<{$subitem.catid}>"><em><{$subitem.name}></em></a>&nbsp;(<{$subitem.hits}>),&nbsp;<{/foreach}><{/if}></td>

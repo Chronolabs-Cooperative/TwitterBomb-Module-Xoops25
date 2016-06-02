@@ -1,0 +1,30 @@
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: <{$block.rpp}>,
+  interval: <{$block.interval}>,
+  width: 'auto',
+  height: <{$block.height}>,
+  theme: {
+    shell: {
+      background: '<{$block.shell.background}>',
+      color: '<{$block.shell.colour}>'
+    },
+    tweets: {
+      background: '<{$block.tweets.background}>',
+      color: '<{$block.tweets.colour}>',
+      links: '<{$block.tweets.links}>'
+    }
+  },
+  features: {
+    scrollbar: <{$block.features.scrollbar}>,
+    loop: <{$block.features.loop}>,
+    live: <{$block.features.live}>,
+    hashtags: <{$block.features.hashtags}>,
+    timestamp: <{$block.features.timestamp}>,
+    avatars: <{$block.features.avatars}>,
+    behavior: 'default'
+  }
+}).render().setUser('<{$block.tweeter}>').start();
+</script>
